@@ -6,9 +6,10 @@ const SignUpStyle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  > div {
+  form {
     padding: 24px;
-    width: 500px;
+    max-width: 500px;
+    width: 90%;
     height: 205px;
     background-color: #ffffff;
     border-radius: 16px;
@@ -37,17 +38,6 @@ const SignUpStyle = styled.div`
     > div {
       display: flex;
       justify-content: end;
-    }
-    button {
-      background-color: #7695ec;
-      border-radius: 8px;
-      outline: none;
-      border: none;
-      width: 111px;
-      height: 32px;
-      color: #ffffff;
-      font-weight: bold;
-      font-size: 16px;
     }
   }
 `;
