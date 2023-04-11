@@ -5,7 +5,7 @@ interface FormValues {
 }
 
 export default function useForm(formValues: FormValues, submit: Function) {
-  const [formData, setFormData] = useState<FormValues>(formValues);
+  const [formData, setFormData] = useState<any>(formValues);
 
   function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
     setFormData({ ...formData, [e.target.name]: e.target.value });

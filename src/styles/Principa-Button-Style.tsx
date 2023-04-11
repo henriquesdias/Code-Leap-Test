@@ -15,6 +15,7 @@ const PrincipalButtonStyle = styled.button`
   font-weight: bold;
   font-size: 16px;
   opacity: ${({ isDisabled }: SignUpProps) => (isDisabled ? "0.3" : "1")};
+  transition: opacity ease-in-out 500ms;
 `;
 
 export default PrincipalButtonStyle;

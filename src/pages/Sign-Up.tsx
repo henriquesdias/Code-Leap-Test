@@ -1,7 +1,9 @@
+import { Dispatch } from "react";
+
 import SignUpStyle from "../styles/Sign-Up-Style";
 import useForm from "../hooks/useForm";
 import PrincipalButton from "../components/Principal-Button";
-import { Dispatch } from "react";
+import MainScreen from "./Main-Screen";
 
 interface ISignUp {
   setPage: Dispatch<JSX.Element>;
@@ -15,7 +17,8 @@ export default function SignUp({ setPage }: ISignUp) {
     saveUsername
   );
   function saveUsername() {
-    localStorage.setItem("username", JSON.stringify(formData));
+    localStorage.setItem("username", formData.name);
+    setPage(<MainScreen />);
   }
 
   return (
@@ -27,6 +30,7 @@ export default function SignUp({ setPage }: ISignUp) {
           type="text"
           placeholder="John doe"
           name="name"
+          value={formData.name}
           onChange={handleInputChange}
         />
         <div>
