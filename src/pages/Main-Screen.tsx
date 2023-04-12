@@ -7,6 +7,7 @@ import useGetPosts from "../hooks/useGetPosts";
 import Loading from "../styles/Loading";
 import DeletePage from "./Delete-Page";
 import { ChangePostState } from "../protocols";
+import UpdatePage from "./Update-Page";
 
 export default function MainScreen() {
   const [changePost, setChangePost] = useState<ChangePostState>({
@@ -26,6 +27,15 @@ export default function MainScreen() {
           <DeletePage
             setPosts={setPosts}
             setChangePost={setChangePost}
+            changePost={changePost}
+          />
+        ) : (
+          <></>
+        )}
+        {changePost.toUpdate ? (
+          <UpdatePage
+            setChangePost={setChangePost}
+            setPosts={setPosts}
             changePost={changePost}
           />
         ) : (

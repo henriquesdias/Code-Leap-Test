@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const CreatePostStyle = styled.form`
+const ChangePostStyle = styled.form`
   border: 1px solid #999999;
   border-radius: 16px;
   height: 334px;
@@ -9,6 +9,7 @@ const CreatePostStyle = styled.form`
   padding: 24px;
   display: flex;
   flex-direction: column;
+  background-color: #ffffff;
   > h2 {
     font-size: 22px;
     font-weight: bold;
@@ -45,4 +46,4 @@ const CreatePostStyle = styled.form`
   }
 `;
 
-export default CreatePostStyle;
+export default ChangePostStyle;

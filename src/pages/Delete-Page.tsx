@@ -1,5 +1,5 @@
 import DeletePageStyle from "../styles/Delete-Page-Style";
-import SecundaryButton from "../styles/Secundary-Button";
+import ButtonStyle from "../styles/Button";
 import { ChangePostState } from "../protocols";
 import deletePost from "../actions/delete-post";
 import { PostType } from "../protocols";
@@ -27,8 +27,10 @@ export default function DeletePage({
       <div>
         <span>Are you sure you want to delete this item?</span>
         <div>
-          <SecundaryButton
-            isDelete={false}
+          <ButtonStyle
+            backgroundColor="#ffffff"
+            color="#000000"
+            border={true}
             onClick={() =>
               setChangePost(() => {
                 return { ...{ id: 0, toDelete: false, toUpdate: false } };
@@ -36,9 +38,11 @@ export default function DeletePage({
             }
           >
             Cancel
-          </SecundaryButton>
-          <SecundaryButton
-            isDelete={true}
+          </ButtonStyle>
+          <ButtonStyle
+            backgroundColor="#FF5151"
+            color="#ffffff"
+            border={false}
             onClick={() => {
               deleteThePost(changePost.id);
               setChangePost(() => {
@@ -47,7 +51,7 @@ export default function DeletePage({
             }}
           >
             Delete
-          </SecundaryButton>
+          </ButtonStyle>
         </div>
       </div>
     </DeletePageStyle>

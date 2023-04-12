@@ -25,7 +25,15 @@ export default function Post({ post, setChangePost }: IPost) {
                   })
                 }
               />
-              <IconUpdate />
+              <IconUpdate
+                onClick={() =>
+                  setChangePost(() => {
+                    return {
+                      ...{ id: post.id, toDelete: false, toUpdate: true },
+                    };
+                  })
+                }
+              />
             </>
           ) : (
             <></>
