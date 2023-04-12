@@ -42,6 +42,10 @@ const PostStyle = styled.div`
   > div:last-child {
     margin: 0 24px;
     text-align: justify;
+    overflow-y: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
   }
 `;
 
