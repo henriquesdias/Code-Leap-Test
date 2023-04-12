@@ -9,6 +9,7 @@ import DeletePage from "./Delete-Page";
 import { ChangePostState } from "../protocols";
 import UpdatePage from "./Update-Page";
 import useInfiniteScroll from "../hooks/useInfiniteScroll";
+import ScrollAutomatic from "../components/Scroll-Automatic";
 
 export default function MainScreen() {
   const [changePost, setChangePost] = useState<ChangePostState>({
@@ -47,6 +48,7 @@ export default function MainScreen() {
           <Post post={e} setChangePost={setChangePost} key={index} />
         ))}
         {isLoading ? <Loading /> : <></>}
+        <ScrollAutomatic />
       </main>
     </MainScreenStyle>
   );
