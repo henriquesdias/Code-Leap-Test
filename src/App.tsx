@@ -7,7 +7,7 @@ import SignUp from "./pages/Sign-Up";
 export default function App() {
   const [page, setPage] = useState<JSX.Element>(<LogoPage />);
   useEffect(() => {
-    const id = setTimeout(() => setPage(<SignUp setPage={setPage} />), 2000);
+    const id = setTimeout(() => setPage(<SignUp setPage={setPage} />), 1500);
     return () => clearTimeout(id);
   }, []);
 

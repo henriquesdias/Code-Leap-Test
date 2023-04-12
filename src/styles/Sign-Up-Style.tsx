@@ -6,6 +6,7 @@ const SignUpStyle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: signUpAnimation 1s ease-in-out forwards;
   form {
     padding: 24px;
     max-width: 500px;
@@ -38,6 +39,14 @@ const SignUpStyle = styled.div`
     > div {
       display: flex;
       justify-content: end;
+    }
+  }
+  @keyframes signUpAnimation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }
 `;

@@ -10,7 +10,7 @@ interface ISignUp {
 }
 
 export default function SignUp({ setPage }: ISignUp) {
-  const { formData, setFormData, handleInputChange, handleSubmit } = useForm(
+  const { formData, handleInputChange, handleSubmit } = useForm(
     {
       name: "",
     },

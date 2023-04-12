@@ -1,6 +1,7 @@
 import PostStyle from "../styles/Post-Style";
 import { PostType } from "../protocols";
 import { IconDelete, IconUpdate } from "../styles/Icons";
+import { genereteTimeDifference } from "../utils";
 
 interface IPost {
   post: PostType;
@@ -9,6 +10,8 @@ interface IPost {
 
 export default function Post({ post, setChangePost }: IPost) {
   const username = localStorage.getItem("username");
+  const minutesPassed = genereteTimeDifference(post.created_datetime);
+
   return (
     <PostStyle>
       <div>
@@ -42,7 +45,11 @@ export default function Post({ post, setChangePost }: IPost) {
       </div>
       <div>
         <span>@{post.username}</span>
-        <span>25 minutes ago</span>
+        <span>
+          {minutesPassed >= 60
+            ? `${Math.floor(minutesPassed / 60)} hours ago`
+            : `${minutesPassed}  minutes ago`}
+        </span>
       </div>
       <div>{post.content}</div>
     </PostStyle>
