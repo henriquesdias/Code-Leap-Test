@@ -4,16 +4,30 @@ import { IconDelete, IconUpdate } from "../styles/Icons";
 
 interface IPost {
   post: PostType;
+  setPostDeleted: Function;
 }
 
-export default function Post({ post }: IPost) {
+export default function Post({ post, setPostDeleted }: IPost) {
+  const username = localStorage.getItem("username");
   return (
     <PostStyle>
       <div>
         <h3>{post.title}</h3>
         <div>
-          <IconDelete />
-          <IconUpdate />
+          {username === post.username ? (
+            <>
+              <IconDelete
+                onClick={() =>
+                  setPostDeleted(() => {
+                    return { ...{ id: post.id, toDelete: true } };
+                  })
+                }
+              />
+              <IconUpdate />
+            </>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
       <div>

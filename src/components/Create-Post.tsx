@@ -1,9 +1,16 @@
+import { Dispatch } from "react";
+
 import CreatePostStyle from "../styles/Create-Post-Style";
 import PrincipalButton from "./Principal-Button";
 import useForm from "../hooks/useForm";
 import createPost from "../actions/create-post";
+import { PostType } from "../protocols";
 
-export default function CreatePost() {
+interface ICreatePost {
+  setPosts: Function;
+}
+
+export default function CreatePost({ setPosts }: ICreatePost) {
   const { formData, handleInputChange, handleSubmit } = useForm(
     { title: "", content: "" },
     submitData
@@ -16,7 +23,10 @@ export default function CreatePost() {
     };
     createPost(data)
       .catch((res) => console.log(res))
-      .then((res) => console.log(res));
+      .then((res) => {
+        console.log(res);
+        setPosts((posts: PostType[]) => [{ ...res }, ...posts]);
+      });
   }
   return (
     <CreatePostStyle onSubmit={handleSubmit}>

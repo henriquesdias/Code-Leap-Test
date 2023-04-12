@@ -8,10 +8,16 @@ async function post(URL: string, Data: any) {
     body: JSON.stringify(Data),
   });
 }
+async function deleteData(URL: string) {
+  return fetch(URL, {
+    method: "DELETE",
+  });
+}
 
 const request = {
   get,
   post,
+  deleteData,
 };
 
 export default request;
