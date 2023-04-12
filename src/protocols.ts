@@ -8,7 +8,8 @@ export type PostType = {
 
 export type NewPostType = Omit<PostType, "id" | "created_datetime">;
 
-export type DeletePostState = {
+export type ChangePostState = {
   id: number;
   toDelete: boolean;
+  toUpdate: boolean;
 };

@@ -29,6 +29,15 @@ const PostStyle = styled.div`
     display: flex;
     justify-content: space-between;
     margin: 25px 24px 16px 24px;
+    span:first-child {
+      width: 200px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @media (max-width: 444px) {
+        width: 95px;
+      }
+    }
   }
   > div:last-child {
     margin: 0 24px;

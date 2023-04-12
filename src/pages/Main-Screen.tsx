@@ -6,12 +6,13 @@ import Post from "../components/Post";
 import useGetPosts from "../hooks/useGetPosts";
 import Loading from "../styles/Loading";
 import DeletePage from "./Delete-Page";
-import { DeletePostState } from "../protocols";
+import { ChangePostState } from "../protocols";
 
 export default function MainScreen() {
-  const [postDeleted, setPostDeleted] = useState<DeletePostState>({
+  const [changePost, setChangePost] = useState<ChangePostState>({
     id: 0,
     toDelete: false,
+    toUpdate: false,
   });
   const { setPosts, posts, isLoading } = useGetPosts();
 
@@ -21,18 +22,17 @@ export default function MainScreen() {
         <h2>CodeLeap Network</h2>
         <CreatePost setPosts={setPosts} />
         {isLoading ? <Loading /> : <></>}
-        {postDeleted.toDelete ? (
+        {changePost.toDelete ? (
           <DeletePage
             setPosts={setPosts}
-            posts={posts}
-            setPostDeleted={setPostDeleted}
-            postDeleted={postDeleted}
+            setChangePost={setChangePost}
+            changePost={changePost}
           />
         ) : (
           <></>
         )}
         {posts?.map((e, index) => (
-          <Post post={e} setPostDeleted={setPostDeleted} key={index} />
+          <Post post={e} setChangePost={setChangePost} key={index} />
         ))}
       </main>
     </MainScreenStyle>

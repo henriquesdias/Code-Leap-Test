@@ -4,10 +4,10 @@ import { IconDelete, IconUpdate } from "../styles/Icons";
 
 interface IPost {
   post: PostType;
-  setPostDeleted: Function;
+  setChangePost: Function;
 }
 
-export default function Post({ post, setPostDeleted }: IPost) {
+export default function Post({ post, setChangePost }: IPost) {
   const username = localStorage.getItem("username");
   return (
     <PostStyle>
@@ -18,8 +18,10 @@ export default function Post({ post, setPostDeleted }: IPost) {
             <>
               <IconDelete
                 onClick={() =>
-                  setPostDeleted(() => {
-                    return { ...{ id: post.id, toDelete: true } };
+                  setChangePost(() => {
+                    return {
+                      ...{ id: post.id, toDelete: true, toUpdate: false },
+                    };
                   })
                 }
               />

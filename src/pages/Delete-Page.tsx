@@ -1,21 +1,19 @@
 import DeletePageStyle from "../styles/Delete-Page-Style";
 import SecundaryButton from "../styles/Secundary-Button";
-import { DeletePostState } from "../protocols";
+import { ChangePostState } from "../protocols";
 import deletePost from "../actions/delete-post";
 import { PostType } from "../protocols";
 
 interface IDeletePage {
-  setPostDeleted: Function;
-  postDeleted: DeletePostState;
+  setChangePost: Function;
+  changePost: ChangePostState;
   setPosts: Function;
-  posts: PostType[] | null;
 }
 
 export default function DeletePage({
-  setPostDeleted,
-  postDeleted,
+  setChangePost,
+  changePost,
   setPosts,
-  posts,
 }: IDeletePage) {
   function deleteThePost(id: number) {
     deletePost(id)
@@ -32,8 +30,8 @@ export default function DeletePage({
           <SecundaryButton
             isDelete={false}
             onClick={() =>
-              setPostDeleted(() => {
-                return { ...{ id: 0, toDelete: false } };
+              setChangePost(() => {
+                return { ...{ id: 0, toDelete: false, toUpdate: false } };
               })
             }
           >
@@ -42,9 +40,9 @@ export default function DeletePage({
           <SecundaryButton
             isDelete={true}
             onClick={() => {
-              deleteThePost(postDeleted.id);
-              setPostDeleted(() => {
-                return { ...{ id: 0, toDelete: false } };
+              deleteThePost(changePost.id);
+              setChangePost(() => {
+                return { ...{ id: 0, toDelete: false, toUpdate: false } };
               });
             }}
           >
