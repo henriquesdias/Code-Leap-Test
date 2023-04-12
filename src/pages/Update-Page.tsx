@@ -87,7 +87,7 @@ export default function UpdatePage({
               formData.title.length === 0 || formData.content.length === 0
             }
             type="submit"
-            onClick={submitData}
+            onClick={handleSubmit}
           >
             Salvar
           </ButtonStyle>
