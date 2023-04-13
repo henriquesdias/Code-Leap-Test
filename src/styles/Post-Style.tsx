@@ -5,6 +5,12 @@ const PostStyle = styled.div`
   height: 316px;
   border-radius: 16px;
   border: 1px solid #999999;
+  h3 {
+    width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   div:first-child {
     background-color: #7695ec;
     height: 70px;
@@ -46,6 +52,7 @@ const PostStyle = styled.div`
     display: -webkit-box;
     -webkit-line-clamp: 10;
     -webkit-box-orient: vertical;
+    word-break: break-word;
   }
 `;
 
