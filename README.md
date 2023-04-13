@@ -32,7 +32,7 @@ VITE_BASE_URL=https://dev.codeleap.co.uk/careers/
   npm run dev
 ```
 
-5. Access http://localhost:5173
+5. Access the url shown in your terminal, probably http://localhost:5173
 
 ## Build
 
@@ -48,8 +48,8 @@ npm run build
 npm run preview
 ```
 
-3. Access http://localhost:4173
+3. Access the url shown in your terminal, probably http://localhost:4173
 
 ### Deploy
 
-If you don't want to configure anything, access https://vercel.com/henriquesdias/code-leap-test
+If you don't want to configure anything, access https://code-leap-test-ten.vercel.app/
