@@ -52,4 +52,4 @@ npm run preview
 
 ### Deploy
 
-If you don't want to configure anything, access https://vercel.com/henriquesdias/code-leap-test
+If you don't want to configure anything, access https://code-leap-test-ten.vercel.app/
