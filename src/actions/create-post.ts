@@ -2,7 +2,7 @@ import request from "../request.tsx/fetchData";
 import { NewPostType } from "../protocols";
 
 export default async function createPost(data: NewPostType) {
-  const URL = "https://dev.codeleap.co.uk/careers/";
+  const URL = import.meta.env.VITE_BASE_URL;
   try {
     const response = await request.post(URL, data);
     if (!response.ok) {

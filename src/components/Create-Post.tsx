@@ -20,7 +20,7 @@ export default function CreatePost({ setPosts }: ICreatePost) {
       username,
     };
     createPost(data)
-      .catch(() => alert("Unable to delete post, please reload page"))
+      .catch(() => alert("Unable to create post, please reload page"))
       .then((res) => {
         setPosts((posts: PostType[]) => [{ ...res }, ...posts]);
       });

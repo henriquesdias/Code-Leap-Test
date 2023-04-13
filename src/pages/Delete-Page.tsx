@@ -17,7 +17,7 @@ export default function DeletePage({
 }: IDeletePage) {
   function deleteThePost(id: number) {
     deletePost(id)
-      .catch((res) => console.log(res))
+      .catch(() => alert("Unable to delete post, please reload page"))
       .then(() =>
         setPosts((posts: PostType[]) => [...posts?.filter((e) => e.id !== id)])
       );

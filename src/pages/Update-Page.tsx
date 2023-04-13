@@ -68,6 +68,7 @@ export default function UpdatePage({
             backgroundColor="#ffffff"
             color="#000000"
             border={true}
+            type="button"
             onClick={() =>
               setChangePost(() => {
                 return { ...{ id: 0, toDelete: false, toUpdate: false } };
